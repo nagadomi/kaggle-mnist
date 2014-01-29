@@ -19,10 +19,10 @@ My code for Kaggle-MNIST competition.
       <td>Feature extraction</td><td>raw data</td>
     </tr>
     <tr>
-      <td>Postprocessing</td><td>L2 normalization, Large Margin Component Analysis</td>
+      <td>Normalization</td><td>L2 normalization</td>
     </tr>
     <tr>
-      <td>Classifier</td><td>k-Nearest Neighbors</td>
+      <td>Classifier</td><td>LMCA k-Nearest Neighbors</td>
     </tr>
     <tr>
       <td>Result</td><td>0.98100</td>
@@ -41,7 +41,7 @@ My code for Kaggle-MNIST competition.
       <td>Feature extraction</td><td>Rectangle Features</td>
     </tr>
     <tr>
-      <td>Postprocessing</td><td>Local standardization, ZCA Whitening, Global standardization</td>
+      <td>Normalization</td><td>Local standardization, ZCA Whitening, Global standardization</td>
     </tr>
     <tr>
       <td>Classifier</td><td>2-Layer NN (1024 hidden units, Softmax, Dropout & DropConnect)</td>

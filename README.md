@@ -22,7 +22,7 @@ My code for Kaggle-MNIST competition.
       <td>Normalization</td><td>L2 normalization</td>
     </tr>
     <tr>
-      <td>Classifier</td><td>LMCA k-Nearest Neighbors</td>
+      <td>Classifier</td><td>Large Margin Component Analysis(LMCA)-based k-Nearest Neighbors</td>
     </tr>
     <tr>
       <td>Result</td><td>0.98100</td>

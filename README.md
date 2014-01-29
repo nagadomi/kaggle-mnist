@@ -30,7 +30,7 @@ My code for Kaggle-MNIST competition.
   </tbody>
 </table>
 
-### whitend_rectangle_mlp
+### rectangle_whitend_mlp/
 
 <table>
   <tbody>

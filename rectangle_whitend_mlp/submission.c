@@ -69,20 +69,16 @@ main(void)
 	nv_mlp_init(mlp, train_data);
 	nv_mlp_drop_connect(mlp, 0.2f);
 	nv_mlp_dropout(mlp, 0.5f);
-	ir = hr = 0.001f;
+	ir = hr = 0.0001f;
 	
 	for (i = 0; i < 12; ++i) {
 		char file[256];
 		if (i > 50) {
-			ir = hr = 0.01f;
-		}
-		if (i > 600) {
 			ir = hr = 0.001f;
 		}
-		if (i > 800) {
+		if (i > 600) {
 			ir = hr = 0.0001f;
 		}
-		
 		nv_mlp_train_ex(mlp, train_data, train_labels, ir, hr,
 						i * 100, (1 + i) * 100, 1200);
 		

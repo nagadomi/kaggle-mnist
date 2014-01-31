@@ -44,7 +44,7 @@ My code for Kaggle-MNIST competition.
       <td>Normalization</td><td>Local standardization, ZCA Whitening, Global standardization</td>
     </tr>
     <tr>
-      <td>Classifier</td><td>2-Layer NN (2048 hidden units, Softmax, Dropout & DropConnect)</td>
+      <td>Classifier</td><td>2-Layer NN (2048 hidden units, Softmax, Dropout)</td>
     </tr>
     <tr>
       <td>Result</td><td>0.98829</td>

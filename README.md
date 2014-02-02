@@ -2,11 +2,9 @@
 
 My code for Kaggle-MNIST competition.
 
-## Build Requirements
+## Dependencies
 
 - [libnv develop branch](https://github.com/nagadomi/nv/tree/develop)</a>
-
-## Results
 
 ### raw_lmca/
 

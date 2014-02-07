@@ -67,7 +67,7 @@ main(void)
 
 	nv_mlp_progress(1);
 	nv_mlp_init(mlp, train_data);
-	nv_mlp_drop_connect(mlp, 0.2f);
+	nv_mlp_noise(mlp, 0.2f);
 	nv_mlp_dropout(mlp, 0.5f);
 	ir = hr = 0.0001f;
 	

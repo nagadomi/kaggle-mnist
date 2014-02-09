@@ -12,9 +12,9 @@ rectangle_feature(nv_matrix_t *fv, nv_matrix_t *data)
 {
 	int i;
 	for (i = 0; i < data->m; ++i) {
-		nv_matrix_t *image = nv_vector_reshape3d(data, i, 1, 32, 32);
+		nv_matrix_t *image = nv_matrix3d_alloc(1, 32, 32);
 		nv_matrix_t *integral = nv_matrix3d_alloc(1, image->rows + 1, image->cols + 1);
-
+		nv_vector_reshape(image, data, i);
 		nv_integral(integral, image, 0);
 		nv_rectangle_feature(fv, i, integral, 0, 0, 32, 32);
 
@@ -71,16 +71,17 @@ main(void)
 	nv_mlp_dropout(mlp, 0.5f);
 	ir = hr = 0.0001f;
 	
-	for (i = 0; i < 12; ++i) {
+	for (i = 0; i < 9; ++i) {
 		char file[256];
-		if (i > 50) {
+		if (i == 1) {
 			ir = hr = 0.001f;
 		}
-		if (i > 600) {
-			ir = hr = 0.0001f;
+		if (i > 1) {
+			ir *= 0.7f;
+			hr *= 0.7f;
 		}
 		nv_mlp_train_ex(mlp, train_data, train_labels, ir, hr,
-						i * 100, (1 + i) * 100, 1200);
+						i * 100, (1 + i) * 100, 1000);
 		
 		nv_snprintf(file, sizeof(file), "epoch_%d.mlp", i);
 		nv_save_mlp(file, mlp);
